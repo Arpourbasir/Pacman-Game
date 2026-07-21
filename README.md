@@ -1,136 +1,205 @@
-🎮 Pacman Game
-A multiplayer, console-and-graphical client-server implementation of the classic Pacman game developed in Python.  
-ZIP
+# 🎮 Pacman Game
 
-📖 Project Overview
-This project brings the classic Pacman arcade experience into a networked environment. It features a client-server architecture where multiple game components, including various ghosts and Pacman state sprites (such as open/closed mouth variants and directional states), interact dynamically across the network.  
-ZIP
-+ 1
+A multiplayer **client-server implementation** of the classic **Pacman** game developed in **Python**. This project combines networking, game logic, and graphical assets to recreate the classic arcade experience with a modular architecture.
 
-The repository is structured cleanly into server-side game logic, client-side rendering, and asset handling.  
-ZIP
+---
 
-🎯 Features
-✅ Client-Server architecture for multiplayer or remote gameplay  
-ZIP
+# 📖 Project Overview
 
-✅ Custom game object mechanics and state handling  
-ZIP
+This project implements a network-based version of **Pacman**, where the game state is managed by a dedicated server while clients handle rendering and user input.
 
-✅ Graphical game sprites (Pacman directional states, green & red ghosts)  
-ZIP
+The game includes graphical assets for Pacman in different movement states, multiple ghost characters, and a modular codebase that separates networking, game logic, and rendering.
 
-✅ Real-time game state synchronization  
-ZIP
+---
 
-✅ Modular and clean project structure  
-ZIP
+# ✨ Features
 
-🕹️ Game Rules
-General Gameplay
-The game is played on a grid-based maze featuring Pacman and multiple Ghosts.  
-ZIP
+- 🎮 Multiplayer Client-Server Architecture
+- 🌐 Real-Time Network Communication
+- 👻 Multiple Ghost Characters
+- 🟡 Animated Pacman Sprites
+- 🎨 PNG Graphics Support
+- ⚡ Real-Time Game State Synchronization
+- 🧩 Modular Code Structure
+- 🖥 Cross-Platform Python Implementation
 
-Pacman navigates through the board to consume points/dots while avoiding ghosts.  
-ZIP
+---
 
-Ghosts (e.g., Red Ghost, Green Ghost) traverse the maze attempting to catch Pacman.  
-ZIP
+# 🕹 Gameplay
 
-Movement & Network Mechanics
-The Server manages game state updates, object collisions, and positions.  
-ZIP
+The objective is simple:
 
-The Client sends player input/movement commands to the server and renders the game assets locally.  
-ZIP
+- Control **Pacman** through the maze.
+- Collect all available dots.
+- Avoid enemy ghosts.
+- Stay alive as long as possible.
+- Synchronize gameplay between the server and connected clients.
 
-Game objects update dynamically depending on movement direction and state changes.  
-ZIP
+---
 
-📂 Project Structure
+# 🌐 Client-Server Architecture
+
+### Server
+
+Responsible for:
+
+- Managing the game state
+- Processing player movements
+- Detecting collisions
+- Synchronizing connected clients
+- Broadcasting updates
+
+### Client
+
+Responsible for:
+
+- Rendering the game
+- Handling keyboard input
+- Receiving updates from the server
+- Displaying sprites and animations
+
+---
+
+# 📂 Project Structure
+
+```text
 Pacman/
 │
-├── client.py            # Client-side script for user connection & rendering
-├── server.py            # Game server logic and state manager
-├── game_objects.py      # Core game entities and physics/board logic
+├── client.py              # Client application
+├── server.py              # Game server
+├── game_objects.py        # Game logic and entities
 │
-├── green_ghost.png      # Green Ghost sprite asset
-├── red_ghost.png        # Red Ghost sprite asset
-├── left_baz.png         # Pacman moving left sprite asset
-├── right_baz.png        # Pacman moving right sprite asset
-└── zard_basteh.png      # Pacman closed-mouth sprite asset
-  
-ZIP
+├── assets/
+│   ├── green_ghost.png
+│   ├── red_ghost.png
+│   ├── left_baz.png
+│   ├── right_baz.png
+│   ├── up_baz.png
+│   ├── down_baz.png
+│   └── zard_basteh.png
+│
+└── README.md
+```
 
-🚀 Getting Started
-Requirements
-Python 3.8 or newer
+---
 
-Recommended image handling libraries (e.g., Pygame or Pillow depending on client implementation)
+# 🚀 Getting Started
 
-Run the Game
+## Requirements
+
+- Python 3.8+
+- Pygame *(if used for rendering)*
+- Pillow *(optional depending on implementation)*
+
+---
+
+# ▶️ Installation
+
 Clone the repository:
 
-Bash
+```bash
 git clone https://github.com/your-username/Pacman.git
-Navigate into the project directory:
+```
 
-Bash
+Navigate to the project:
+
+```bash
 cd Pacman
-Start the Server:
+```
 
-Bash
+---
+
+# ▶️ Running the Game
+
+Start the server:
+
+```bash
 python server.py
-Launch the Client (in a separate terminal window):
+```
 
-Bash
+Open another terminal and start the client:
+
+```bash
 python client.py
-🛠 Technologies Used
-Technology	Purpose
-Python 3	
-Core programming language  
-ZIP
+```
 
-Sockets / Networking	
-Client-Server communication (server.py & client.py)  
-ZIP
+Run additional clients to connect multiple players.
 
-PNG Graphics	
-Visual assets for Pacman states and ghosts  
-ZIP
+---
 
-🔍 Future Improvements
-Possible enhancements include:
+# 🎮 Controls
 
-Graphical User Interface improvements using Pygame or Arcade
+| Key | Action |
+|------|--------|
+| ⬅ Left | Move Left |
+| ➡ Right | Move Right |
+| ⬆ Up | Move Up |
+| ⬇ Down | Move Down |
 
-Sound effects and background music
+---
 
-AI-driven ghost pathfinding algorithms (e.g., A* algorithm)
+# 🛠 Technologies Used
 
-Score leaderboards and persistence
+| Technology | Purpose |
+|------------|---------|
+| Python 3 | Core Programming Language |
+| Socket Programming | Client-Server Communication |
+| PNG Assets | Game Graphics |
+| OOP | Modular Game Design |
+| Pygame *(Optional)* | Rendering and Graphics |
 
-Support for multiple concurrent Pacman players
+---
 
-Save and reload game state functionality
+# 🧠 Project Highlights
 
-Comprehensive unit tests for game physics and collisions
+- Client-Server Networking
+- Modular Game Architecture
+- Real-Time Synchronization
+- Object-Oriented Design
+- Sprite-Based Animation
+- Game State Management
 
-🤝 Contributing
-Contributions, issues, and feature requests are welcome!
+---
 
-Feel free to fork the repository and submit a Pull Request.
+# 🔮 Future Improvements
 
-📄 License
-This project is created for educational and learning purposes.
+Potential future enhancements include:
 
-You are free to study, modify, and build upon the source code.
+- 🎵 Background music and sound effects
+- 🤖 Intelligent ghost AI (A* Pathfinding)
+- 🏆 Online leaderboard
+- 💾 Save & Load game
+- 🌍 Internet multiplayer support
+- 📱 Mobile version
+- 🎨 Improved animations
+- ⚡ Better network optimization
+- 🧪 Unit testing
+- 🎮 Lobby and matchmaking system
 
-👨‍💻 Arpourbasir
-Alireza Pourbasir
+---
 
-GitHub:
+# 🤝 Contributing
 
-https://github.com/Arpourbasir
+Contributions are welcome!
 
-⭐ If you found this project useful, consider giving it a star!
+If you have ideas for improvements or find a bug, feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 📄 License
+
+This project was developed for educational purposes.
+
+You are free to use, study, modify, and improve the source code for learning and non-commercial purposes.
+
+---
+
+# 👨‍💻 Arpourbasir
+
+**Alireza Pourbasir**
+
+GitHub: https://github.com/Arpourbasir
+
+---
+
+⭐ If you enjoyed this project, don't forget to **Star ⭐ the repository!**
